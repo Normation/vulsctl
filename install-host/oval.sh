@@ -1,7 +1,7 @@
 #! /bin/sh -
 
 if [ $# -eq 0 ]; then
-	echo "specify [--redhat --amazon --debian --ubuntu --alpine]"
+	echo "specify [--redhat --amazon --debian --ubuntu --alpine --sles]"
 	exit 1
 fi
 
@@ -20,6 +20,9 @@ case "$target" in
 		;;
 	--ubuntu) 
 		goval-dictionary fetch-ubuntu ${@} 14 16 18 20
+		;;
+	--sles)
+		goval-dictionary fetch-suse -suse-enterprise-server ${@} 11 12 15
 		;;
 	--alpine) 
 		goval-dictionary fetch-alpine ${@} 3.3 3.4 3.5 3.6 3.7 3.8 3.9 3.10
