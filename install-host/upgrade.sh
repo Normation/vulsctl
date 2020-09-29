@@ -1,5 +1,10 @@
 #!/bin/sh
 
+GOROOT=/usr/local/go
+GOPATH=/root/go
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/go/bin:/root/go/bin:/usr/local/go/bin:/root/go/bin
+
+
 RED='\033[0;31m';
 NC='\033[0m';
 
@@ -36,6 +41,8 @@ upgrade_vuls() {
 	git pull
 	make install; 
 
+  systemctl stop vuls
+
 	cp $GOPATH/bin/go-cve-dictionary /usr/local/bin/
 	cp $GOPATH/bin/go-exploitdb /usr/local/bin/
 	cp $GOPATH/bin/gost /usr/local/bin/
@@ -43,6 +50,8 @@ upgrade_vuls() {
 	cp $GOPATH/bin/vuls /usr/local/bin/
 	cp $GOPATH/bin/go-msfdb /usr/local/bin/
 	echo "Done."; 
+
+  systemctl restart vuls
 }
 
 # https://github.com/namhyung/uftrace/blob/master/misc/install-deps.sh
@@ -69,7 +78,7 @@ if [ $distro = "" ]; then
 fi
 
 case $distro in
-	"ubuntu" | "pop" | "raspbian" | "rhel" | "centos")
+	"ubuntu" | "debian" | "pop" | "raspbian" | "rhel" | "centos")
 		upgrade_vuls;;
 	*) # we can add more install command for each distros.
 		echo "\"$distro\" is not supported distro, so please install packages manually." ;;
