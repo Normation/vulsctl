@@ -40,7 +40,7 @@ install_vuls() {
 	git clone https://github.com/kotakanbe/goval-dictionary.git;
 	cd $GOPATH/src/github.com/kotakanbe/go-cve-dictionary; 
 	make install;
-	cd $GOPATH/src/github.com/kotakanbe/goval-dictionary;
+	cd $GOPATH/src/github.com/normation/goval-dictionary;
 	make install;
 	#ln -s $GOPATH/src/github.com/kotakanbe/goval-dictionary/oval.sqlite3 $HOME/oval.sqlite3;
 
