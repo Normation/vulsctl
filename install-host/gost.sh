@@ -10,10 +10,10 @@ shift
 
 case "$target" in
 	--redhat) 
-		gost fetch ${@} redhat
+		gost fetch --dbtype=postgres --dbpath="postgres://vuls:${DBPASS}@127.0.0.1/cvedict" ${@} redhat
 		;;
 	--debian) 
-		gost fetch ${@} debian
+		gost fetch --dbtype=postgres --dbpath="postgres://vuls:${DBPASS}@127.0.0.1/cvedict" ${@} debian
 		;;
 	--*)  echo "specify [--redhat --debian]"
 		exit 1
