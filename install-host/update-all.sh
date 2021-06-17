@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# Read password
+. /etc/vuls/env
+
 ./oval.sh --redhat && \
 ./oval.sh --amazon && \
 ./oval.sh --debian && \
