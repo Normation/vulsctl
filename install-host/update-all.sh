@@ -11,6 +11,6 @@
 ./oval.sh --sles   && \
 #./gost.sh --redhat && \
 #./gost.sh --debian && \
-./cvedb.sh && \
-./exploitdb.sh && \
-./msfdb.sh
+./cvedb.sh 
+#./exploitdb.sh && \
+#./msfdb.sh
