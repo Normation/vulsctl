@@ -10,7 +10,7 @@ shift
 
 case "$target" in
 	--redhat) 
-		goval-dictionary fetch-redhat -dbtype=postgres -dbpath="postgres://vuls:${DBPASS}@127.0.0.1/ovaldict" ${@} 6 7 8 
+		goval-dictionary fetch-redhat -dbtype=postgres -dbpath="postgres://vuls:${DBPASS}@127.0.0.1/ovaldict" ${@} 6 7 8 9
 		;;
 	--amazon) 
 		goval-dictionary fetch-amazon -dbtype=postgres -dbpath="postgres://vuls:${DBPASS}@127.0.0.1/ovaldict" ${@} 
@@ -19,7 +19,7 @@ case "$target" in
 		goval-dictionary fetch-debian -dbtype=postgres -dbpath="postgres://vuls:${DBPASS}@127.0.0.1/ovaldict" ${@} 8 9 10 11
 		;;
 	--ubuntu) 
-		goval-dictionary fetch-ubuntu -dbtype=postgres -dbpath="postgres://vuls:${DBPASS}@127.0.0.1/ovaldict" ${@} 14 16 18 20
+		goval-dictionary fetch-ubuntu -dbtype=postgres -dbpath="postgres://vuls:${DBPASS}@127.0.0.1/ovaldict" ${@} 14 16 18 20 22
 		;;
 	--sles)
 		goval-dictionary fetch-suse -dbtype=postgres -dbpath="postgres://vuls:${DBPASS}@127.0.0.1/ovaldict" -suse-enterprise-server ${@} 11 12 15

@@ -9,8 +9,8 @@
 ./oval.sh --ubuntu && \
 ./oval.sh --alpine && \
 ./oval.sh --sles   && \
-./gost.sh --redhat && \
-./gost.sh --debian && \
+#./gost.sh --redhat && \
+#./gost.sh --debian && \
 ./cvedb.sh && \
 ./exploitdb.sh && \
 ./msfdb.sh
