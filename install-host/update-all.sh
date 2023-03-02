@@ -4,6 +4,7 @@
 . /etc/vuls/env
 
 ./oval.sh --redhat && \
+./oval.sh --oracle && \
 ./oval.sh --amazon && \
 ./oval.sh --debian && \
 ./oval.sh --ubuntu && \
