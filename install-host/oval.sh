@@ -9,6 +9,9 @@ target=$1
 shift
 
 case "$target" in
+	--oracle) 
+		goval-dictionary fetch-oracle -dbtype=postgres -dbpath="postgres://vuls:${DBPASS}@127.0.0.1/ovaldict" ${@}
+		;;
 	--redhat) 
 		goval-dictionary fetch-redhat -dbtype=postgres -dbpath="postgres://vuls:${DBPASS}@127.0.0.1/ovaldict" ${@} 6 7 8 9
 		;;
