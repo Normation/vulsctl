@@ -19,7 +19,7 @@ case "$target" in
 		goval-dictionary fetch-amazon -dbtype=postgres -dbpath="postgres://vuls:${DBPASS}@127.0.0.1/ovaldict" ${@} 
 		;;
 	--debian) 
-		goval-dictionary fetch-debian -dbtype=postgres -dbpath="postgres://vuls:${DBPASS}@127.0.0.1/ovaldict" ${@} 8 9 10 11
+		goval-dictionary fetch-debian -dbtype=postgres -dbpath="postgres://vuls:${DBPASS}@127.0.0.1/ovaldict" ${@} 8 9 10 11 12
 		;;
 	--ubuntu) 
 		goval-dictionary fetch-ubuntu -dbtype=postgres -dbpath="postgres://vuls:${DBPASS}@127.0.0.1/ovaldict" ${@} 14 16 18 20 22
