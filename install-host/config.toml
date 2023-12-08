@@ -1,0 +1,23 @@
+# Create config.toml using below and then ./vuls -config=/path/to/config.toml
+
+# https://vuls.io/docs/en/config.toml.html#database-section
+[cveDict]
+sqlite3Path = "/srv/vuls/db/cve.sqlite3"
+
+[ovalDict]
+sqlite3Path = "/srv/vuls/db/oval.sqlite3"
+
+[gost]
+sqlite3Path = "/srv/vuls/db/gost.sqlite3"
+
+[exploit]
+sqlite3Path = "/srv/vuls/db/go-exploitdb.sqlite3"
+
+[metasploit]
+sqlite3Path = "/srv/vuls/db/go-msfdb.sqlite3"
+
+[kevuln]
+sqlite3Path = "/srv/vuls/db/go-kev.sqlite3"
+
+[cti]
+sqlite3Path = "/srv/vuls/db/go-cti.sqlite3"
