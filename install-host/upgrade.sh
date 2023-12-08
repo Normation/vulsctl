@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -e
+
 RED='\033[0;31m';
 NC='\033[0m';
 
@@ -55,6 +57,8 @@ upgrade_vuls() {
 #	cp $GOPATH/bin/go-kev /usr/local/bin/
 #	cp $GOPATH/bin/go-cti /usr/local/bin/
 	cp $GOPATH/bin/vuls /usr/local/bin/
+
+	systemctl restart vuls
 	echo "Done.";
 }
 
