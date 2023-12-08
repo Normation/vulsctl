@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -e
+
 ./oval.sh --redhat && \
 ./oval.sh --amazon && \
 ./oval.sh --oracle && \
@@ -10,3 +12,8 @@
 ./gost.sh --ubuntu && \
 ./gost.sh --microsoft && \
 ./cvedb.sh --nvd
+
+# Now update production database
+cp *.sqlite3 /srv/vuls/db/
+# No reload
+systemctl restart vuls
