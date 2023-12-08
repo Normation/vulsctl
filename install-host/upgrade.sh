@@ -11,6 +11,10 @@ NC='\033[0m';
 
 ID=$(whoami);
 
+upgrade_vulsctl() {
+	cd /srv/vuls/vulsctl
+	git pull
+}
 
 upgrade_vuls() {
 	echo -e "$RED""go-cve-dictionary upgrading...""$NC";
@@ -99,7 +103,7 @@ fi
 
 case $distro in
 	"ubuntu" | "debian" | "pop" | "raspbian" | "rhel" | "centos" | "fedora")
-		upgrade_vuls;;
+		upgrade_vulsctl && upgrade_vuls;;
 	*) # we can add more install command for each distros.
 		echo "\"$distro\" is not supported distro, so please install packages manually." ;;
 esac
