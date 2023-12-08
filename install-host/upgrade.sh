@@ -2,6 +2,10 @@
 
 set -e
 
+export GOROOT=/usr/local/go
+export GOPATH=/root/go
+export PATH=/usr/local/go/bin:/root/go/bin:$PATH
+
 RED='\033[0;31m';
 NC='\033[0m';
 
@@ -49,6 +53,7 @@ upgrade_vuls() {
 	git pull
 	make install;
 
+	echo -e "$RED""Vuls restarting...""$NC";
   systemctl stop vuls
 
 	cp $GOPATH/bin/go-cve-dictionary /usr/local/bin/

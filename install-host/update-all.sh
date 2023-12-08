@@ -2,6 +2,10 @@
 
 set -e
 
+export GOROOT=/usr/local/go
+export GOPATH=/root/go
+export PATH=/usr/local/go/bin:/root/go/bin:$PATH
+
 ./oval.sh --redhat && \
 ./oval.sh --amazon && \
 ./oval.sh --oracle && \
