@@ -1,0 +1,11 @@
+[Unit]
+Description=Vuls API
+After=network.target
+
+[Service]
+Type=simple
+User=vuls
+ExecStart=vuls server -config=/etc/vuls/config.toml -listen 127.0.0.1:5515 -ignore-unfixed
+
+[Install]
+WantedBy=multi-user.target
