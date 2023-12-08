@@ -49,6 +49,8 @@ upgrade_vuls() {
 	git pull
 	make install;
 
+  systemctl stop vuls
+
 	cp $GOPATH/bin/go-cve-dictionary /usr/local/bin/
 	cp $GOPATH/bin/goval-dictionary /usr/local/bin/
 	cp $GOPATH/bin/gost /usr/local/bin/
@@ -58,7 +60,7 @@ upgrade_vuls() {
 #	cp $GOPATH/bin/go-cti /usr/local/bin/
 	cp $GOPATH/bin/vuls /usr/local/bin/
 
-	systemctl restart vuls
+	systemctl start vuls
 	echo "Done.";
 }
 
