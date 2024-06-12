@@ -17,10 +17,10 @@ case "$target" in
 		goval-dictionary fetch amazon ${@} 2 2022 2023
 		;;
 	--debian)
-		goval-dictionary fetch debian ${@} 10 11
+		goval-dictionary fetch debian ${@} 10 11 12
 		;;
 	--ubuntu)
-		goval-dictionary fetch ubuntu ${@} 14.04 16.04 18.04 20.04 22.04
+		goval-dictionary fetch ubuntu ${@} 14.04 16.04 18.04 20.04 22.04 24.04
 		;;
 	--alpine)
 		goval-dictionary fetch alpine ${@} 3.14 3.15 3.16 3.17
