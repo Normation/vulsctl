@@ -6,6 +6,11 @@ export GOROOT=/usr/local/go
 export GOPATH=/root/go
 export PATH=/usr/local/go/bin:/root/go/bin:$PATH
 
+
+#./exploitdb.sh && \
+#./msfdb.sh && \
+#./kev.sh && \
+#./cti.sh && \
 ./oval.sh --redhat && \
 ./oval.sh --amazon && \
 ./oval.sh --oracle && \
@@ -19,7 +24,7 @@ export PATH=/usr/local/go/bin:/root/go/bin:$PATH
 
 # Now update production database
 mkdir -p /srv/vuls/db-new/
-mv *.sqlite3 /srv/vuls/db-new/
+cp *.sqlite3 /srv/vuls/db-new/
 systemctl stop vuls
 mv /srv/vuls/db /srv/vuls/db-old
 mv /srv/vuls/db-new /srv/vuls/db

@@ -67,48 +67,48 @@ install_vuls() {
 	make install;
 	#ln -s $GOPATH/src/github.com/vulsio/gost/gost.sqlite3 $HOME/gost.sqlite3;
 
-#	echo -e "$RED""go-exploitdb installing...""$NC";
-#	mkdir -p /var/log/go-exploitdb
-#	chown $ID /var/log/go-exploitdb
-#	chmod 700 /var/log/go-exploitdb
-#	mkdir -p $GOPATH/src/github.com/vulsio;
-#	cd $GOPATH/src/github.com/vulsio;
-#	git clone https://github.com/vulsio/go-exploitdb.git;
-#	cd go-exploitdb;
-#	make install;
+	echo -e "$RED""go-exploitdb installing...""$NC";
+	mkdir -p /var/log/go-exploitdb
+	chown $ID /var/log/go-exploitdb
+	chmod 700 /var/log/go-exploitdb
+	mkdir -p $GOPATH/src/github.com/vulsio;
+	cd $GOPATH/src/github.com/vulsio;
+	git clone https://github.com/vulsio/go-exploitdb.git;
+	cd go-exploitdb;
+	make install;
 #	#ln -s $GOPATH/src/github.com/vulsio/go-exploitdb/go-exploitdb.sqlite3 $HOME/go-exploitdb.sqlite3;
 
-#	echo -e "$RED""go-msfdb installing...""$NC";
-#	mkdir -p /var/log/go-msfdb
-#	chown $ID /var/log/go-msfdb
-#	chmod 700 /var/log/go-msfdb
-#	mkdir -p $GOPATH/src/github.com/vulsio
-#	cd $GOPATH/src/github.com/vulsio/
-#	git clone https://github.com/vulsio/go-msfdb.git
-#	cd go-msfdb;
-#	make install;
+	echo -e "$RED""go-msfdb installing...""$NC";
+	mkdir -p /var/log/go-msfdb
+	chown $ID /var/log/go-msfdb
+	chmod 700 /var/log/go-msfdb
+	mkdir -p $GOPATH/src/github.com/vulsio
+	cd $GOPATH/src/github.com/vulsio/
+	git clone https://github.com/vulsio/go-msfdb.git
+	cd go-msfdb;
+	make install;
 #	#ln -s $GOPATH/src/github.com/vulsio/go-msfdb/go-msfdb.sqlite3 $HOME/go-msfdb.sqlite3;
 
-#	echo -e "$RED""go-kev installing...""$NC";
-#	mkdir -p /var/log/go-kev
-#	chown $ID /var/log/go-kev
-#	chmod 700 /var/log/go-kev
-#	mkdir -p $GOPATH/src/github.com/vulsio
-#	cd $GOPATH/src/github.com/vulsio/
-#	git clone https://github.com/vulsio/go-kev.git
-#	cd go-kev;
-#	make install;
+	echo -e "$RED""go-kev installing...""$NC";
+	mkdir -p /var/log/go-kev
+	chown $ID /var/log/go-kev
+	chmod 700 /var/log/go-kev
+	mkdir -p $GOPATH/src/github.com/vulsio
+	cd $GOPATH/src/github.com/vulsio/
+	git clone https://github.com/vulsio/go-kev.git
+	cd go-kev;
+	make install;
 #	#ln -s $GOPATH/src/github.com/vulsio/go-kev/go-kev.sqlite3 $HOME/go-kev.sqlite3;
 
-#	echo -e "$RED""go-cti installing...""$NC";
-#	mkdir -p /var/log/go-cti
-#	chown $ID /var/log/go-cti
-#	chmod 700 /var/log/go-cti
-#	mkdir -p $GOPATH/src/github.com/vulsio
-#	cd $GOPATH/src/github.com/vulsio/
-#	git clone https://github.com/vulsio/go-cti.git
-#	cd go-cti;
-#	make install;
+	echo -e "$RED""go-cti installing...""$NC";
+	mkdir -p /var/log/go-cti
+	chown $ID /var/log/go-cti
+	chmod 700 /var/log/go-cti
+	mkdir -p $GOPATH/src/github.com/vulsio
+	cd $GOPATH/src/github.com/vulsio/
+	git clone https://github.com/vulsio/go-cti.git
+	cd go-cti;
+	make install;
 #	#ln -s $GOPATH/src/github.com/vulsio/go-cti/go-cti.sqlite3 $HOME/go-cti.sqlite3;
 
 	echo -e "$RED""Vuls installing...""$NC";
@@ -125,10 +125,10 @@ install_vuls() {
 	cp $GOPATH/bin/go-cve-dictionary /usr/local/bin/
 	cp $GOPATH/bin/goval-dictionary /usr/local/bin/
 	cp $GOPATH/bin/gost /usr/local/bin/
-#	cp $GOPATH/bin/go-exploitdb /usr/local/bin/
-#	cp $GOPATH/bin/go-msfdb /usr/local/bin/
-#	cp $GOPATH/bin/go-kev /usr/local/bin/
-#	cp $GOPATH/bin/go-cti /usr/local/bin/
+	cp $GOPATH/bin/go-exploitdb /usr/local/bin/
+	cp $GOPATH/bin/go-msfdb /usr/local/bin/
+	cp $GOPATH/bin/go-kev /usr/local/bin/
+	cp $GOPATH/bin/go-cti /usr/local/bin/
 	cp $GOPATH/bin/vuls /usr/local/bin/
 	echo "Done.";
 }
