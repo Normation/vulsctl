@@ -18,6 +18,12 @@ export PATH=/usr/local/go/bin:/root/go/bin:$PATH
 ./cvedb.sh --nvd
 
 # Now update production database
-cp *.sqlite3 /srv/vuls/db/
+mkdir -p /srv/vuls/db-new/
+mv *.sqlite3 /srv/vuls/db-new/
+systemctl stop vuls
+mv /srv/vuls/db /srv/vuls/db-old
+mv /srv/vuls/db-new /srv/vuls/db
 # No reload
-systemctl restart vuls
+systemctl start vuls
+# Clean
+rm -r /srv/vuls/db-old
