@@ -1,6 +1,6 @@
 #!/bin/sh
 
-set -e
+set -ex
 
 export GOROOT=/usr/local/go
 export GOPATH=/root/go
