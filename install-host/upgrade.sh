@@ -5,6 +5,12 @@ NC='\033[0m';
 
 ID=$(whoami);
 
+set -e
+
+export GOROOT=/usr/local/go
+export GOPATH=/root/go
+export PATH=/usr/local/go/bin:/root/go/bin:$PATH
+
 
 upgrade_vuls() {
 	echo -e "$RED""go-cve-dictionary upgrading...""$NC";
@@ -22,39 +28,52 @@ upgrade_vuls() {
 	git pull
 	make install;
 
-	echo -e "$RED""go-exploitdb installing...""$NC";
-	cd $GOPATH/src/github.com/vulsio/go-exploitdb;
-	git pull
-	make install;
+	#echo -e "$RED""go-exploitdb installing...""$NC";
+	#cd $GOPATH/src/github.com/vulsio/go-exploitdb;
+	#git pull
+	#make install;
 
-	echo -e "$RED""go-msfdb installing...""$NC";
-	cd $GOPATH/src/github.com/vulsio/go-msfdb;
-	git pull
-	make install;
+	#echo -e "$RED""go-msfdb installing...""$NC";
+	#cd $GOPATH/src/github.com/vulsio/go-msfdb;
+	#git pull
+	#make install;
 
-	echo -e "$RED""go-kev installing...""$NC";
-	cd $GOPATH/src/github.com/vulsio/go-kev;
-	git pull
-	make install;
+	#echo -e "$RED""go-kev installing...""$NC";
+	#cd $GOPATH/src/github.com/vulsio/go-kev;
+	#git pull
+	#make install;
 
-	echo -e "$RED""go-cti installing...""$NC";
-	cd $GOPATH/src/github.com/vulsio/go-cti;
-	git pull
-	make install;
+	#echo -e "$RED""go-cti installing...""$NC";
+	#cd $GOPATH/src/github.com/vulsio/go-cti;
+	#git pull
+	#make install;
 
 	echo -e "$RED""Vuls installing...""$NC";
 	cd $GOPATH/src/github.com/future-architect/vuls;
 	git pull
 	make install;
 
+    echo -e "$RED""Vuls restarting...""$NC";
+    systemctl stop vuls
+
+
 	cp $GOPATH/bin/go-cve-dictionary /usr/local/bin/
 	cp $GOPATH/bin/goval-dictionary /usr/local/bin/
 	cp $GOPATH/bin/gost /usr/local/bin/
-	cp $GOPATH/bin/go-exploitdb /usr/local/bin/
-	cp $GOPATH/bin/go-msfdb /usr/local/bin/
-	cp $GOPATH/bin/go-kev /usr/local/bin/
-	cp $GOPATH/bin/go-cti /usr/local/bin/
+	#cp $GOPATH/bin/go-exploitdb /usr/local/bin/
+	#cp $GOPATH/bin/go-msfdb /usr/local/bin/
+	#cp $GOPATH/bin/go-kev /usr/local/bin/
+	#cp $GOPATH/bin/go-cti /usr/local/bin/
 	cp $GOPATH/bin/vuls /usr/local/bin/
+
+
+    cd /srv/vuls/vulsctl/install-host
+    cp config.toml /etc/vuls/
+    cp vuls.service /etc/systemd/system/
+    systemctl daemon-reload
+    systemctl start vuls
+
+
 	echo "Done.";
 }
 
