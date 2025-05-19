@@ -1,5 +1,12 @@
 #!/bin/sh
 
+set -e
+
+export GOROOT=/usr/local/go
+export GOPATH=/root/go
+export PATH=/usr/local/go/bin:/root/go/bin:$PATH
+
+
 ./oval.sh --redhat && \
 ./oval.sh --amazon && \
 ./oval.sh --debian && \
@@ -12,11 +19,16 @@
 ./gost.sh --debian && \
 ./gost.sh --ubuntu && \
 ./gost.sh --microsoft && \
-./cvedb.sh --nvd && \
-./cvedb.sh --jvn && \
-./cvedb.sh --fortinet && \
-./cvedb.sh --mitre && \
-./exploitdb.sh && \
-./msfdb.sh && \
-./kev.sh && \
-./cti.sh
+./cvedb.sh --nvd
+#./cvedb.sh --jvn && \
+#./cvedb.sh --fortinet && \
+#./cvedb.sh --mitre && \
+#./exploitdb.sh && \
+#./msfdb.sh && \
+#./kev.sh && \
+#./cti.sh
+
+# Now update production database
+cp *.sqlite3 /srv/vuls/db/
+# No reload
+systemctl restart vuls

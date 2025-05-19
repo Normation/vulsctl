@@ -66,12 +66,7 @@ upgrade_vuls() {
 	#cp $GOPATH/bin/go-cti /usr/local/bin/
 	cp $GOPATH/bin/vuls /usr/local/bin/
 
-
-    cd /srv/vuls/vulsctl/install-host
-    cp config.toml /etc/vuls/
-    cp vuls.service /etc/systemd/system/
-    systemctl daemon-reload
-    systemctl start vuls
+    systemctl restart vuls
 
 
 	echo "Done.";
